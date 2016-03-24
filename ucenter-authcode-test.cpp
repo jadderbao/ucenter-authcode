@@ -16,13 +16,15 @@ int main(int argc, _TCHAR* argv[])
 	ucenter_authcode eng_ua(eng_key);
 	std::string eng_en = eng_ua.encode(eng);
 	std::string eng_de = eng_ua.decode(eng_en);
+	
+	std::cout << "eng_key:" << eng_key << std::endl;
 
 	std::cout << "eng:" << eng << std::endl;
 	std::cout << "eng_en:" << eng_en << std::endl;
 	std::cout << "eng_de:" << eng_de << std::endl;
 	std::cout << "eng == eng_de:" << (eng == eng_de) << std::endl;
 
-	std::string cn = "ÏòMyCatÊý¾Ý¿âÖÐ²åÈëÒ»ÌõStringÀàÐÍÊý¾Ý,³ÌÐòÊ¹ÓÃ£¿£¡¡¶¡·£û£ý¡¾¡¿¡°¡±¡¯¡®¡¢¡¤£±£²£³£´£µ£¶£·£¸£¹£°£­£½£«¡ª";
+	std::string cn = "å‘MyCatæ•°æ®åº“ä¸­æ’å…¥ä¸€æ¡Stringç±»åž‹æ•°æ®,ç¨‹åºä½¿ç”¨ï¼Ÿï¼ã€Šã€‹ï½›ï½ã€ã€‘â€œâ€â€™â€˜ã€Â·ï¼‘ï¼’ï¼“ï¼”ï¼•ï¼–ï¼—ï¼˜ï¼™ï¼ï¼ï¼ï¼‹â€”";
 
 	std::string cn_en = eng_ua.encode(cn);
 	std::string cn_de = eng_ua.decode(cn_en);
