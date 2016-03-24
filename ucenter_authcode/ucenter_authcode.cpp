@@ -153,7 +153,7 @@ std::string ucenter_authcode::get_key(const std::string& pass, size_t kLen)
 {
 	std::string key(kLen, '\0');
 	for (size_t i = 0; i < kLen; i++) {
-		key[i] = i;
+		key[i] = (char)i;
 	}
 
 	size_t pass_Len = pass.size();
@@ -186,7 +186,7 @@ std::string ucenter_authcode::RC4(const std::string& data, const std::string& pa
 
 	size_t dataLen = data.size();
 
-	// 加密
+	// 鍔犲瘑
 	size_t i = 0;
 	size_t j = 0;
 
@@ -199,7 +199,7 @@ std::string ucenter_authcode::RC4(const std::string& data, const std::string& pa
 		mbox[j] = temp;
 		char a = data[offset];
 
-		// mbox[j] 一定比 mbox_Len 小，不需要再取模
+		// mbox[j] 涓�瀹氭瘮 mbox_Len 灏忥紝涓嶉渶瑕佸啀鍙栨ā
 		char b = mbox[(to_Int(mbox[i]) + to_Int(mbox[j])) % mbox_Len];
 
 		output[offset] = (char)((int)a ^ to_Int(b));
